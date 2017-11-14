@@ -1,7 +1,7 @@
-const int servo=9;
+const int servo=3;
 const int dc_has=10;
-const int dc_ret1=12;
-const int dc_ret2=13;
+const int dc_ret1=11;
+const int dc_ret2=12;
 
 unsigned long tid;
 
