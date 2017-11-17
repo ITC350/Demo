@@ -65,9 +65,11 @@ void triggerISR4() {
 }
 
 ISR(TIMER1_COMPA_vect) { //timer1 interrupt
-  Serial.print(incount1," ");
+  Serial.print(incount1);
+  Serial.print(":");
   Serial.println(incount2);
-  Serial.print(incount3," ");
+  Serial.print(incount3);
+  Serial.print(":");
   Serial.println(incount4);
   Serial.println("###########");
   incount1 = 0;
