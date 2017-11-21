@@ -18,6 +18,7 @@ unsigned long tid;
 
 void setup()
 {
+  Serial.begin(9600);
   //sensor
   pinMode(inpin1, INPUT);
   pinMode(inpin2, INPUT);
@@ -53,11 +54,19 @@ void setup()
 void loop()
 {
   //frem
-  analogWrite(servo, 64);
+  analogWrite(servo, 48);
   analogWrite(dc_has, 35);
   digitalWrite(dc_ret1,HIGH);
   digitalWrite(dc_ret2,LOW);
-  delay(1000);
+
+   for (int i=35; i <= 255; i++){
+      analogWrite(dc_has, i);
+      delay(50);
+   }
+   for (int i=255; i >= 35; i--){
+      analogWrite(dc_has, i);
+      delay(50);
+   }
 }
 
 //sensor interrupts #############################################################################################
@@ -87,13 +96,14 @@ void triggerISR4() {
 
 //Timer interrrput
 ISR(TIMER1_COMPA_vect) { //timer1 interrupt
-  Serial.print(incount1);
-  Serial.print(":");
-  Serial.println(incount2);
-  Serial.print(incount3);
-  Serial.print(":");
-  Serial.println(incount4);
-  Serial.println("###########");
+    Serial.println(incount1);
+//  Serial.print(incount1);
+//  Serial.print(":");
+//  Serial.println(incount2);
+//  Serial.print(incount3);
+//  Serial.print(":");
+//  Serial.println(incount4);
+//  Serial.println("###########");
   incount1 = 0;
   incount2 = 0;
   incount3 = 0;
