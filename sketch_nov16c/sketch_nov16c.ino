@@ -16,7 +16,7 @@ void setup() {
   pinMode(inpin2, INPUT);
   pinMode(inpin3, INPUT);
   pinMode(inpin4, INPUT);
-  pinMode(13, OUTPUT);
+  pinMode(51, OUTPUT);
   attachInterrupt(digitalPinToInterrupt(inpin1), triggerISR1, HIGH); //attach interrupt
   attachInterrupt(digitalPinToInterrupt(inpin2), triggerISR2, HIGH); //attach interrupt
   attachInterrupt(digitalPinToInterrupt(inpin3), triggerISR3, HIGH); //attach interrupt
@@ -38,6 +38,10 @@ void setup() {
 
 void loop() {
   //digitalWrite(13, state);    //pin 13 led react with interrupt
+  digitalWrite(51, 1);
+  delay(100);
+  digitalWrite(51, 0);
+  delay(100);
 }
 
 void triggerISR1() {
