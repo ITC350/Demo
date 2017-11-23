@@ -22,7 +22,6 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(inpin3), triggerISR3, HIGH); //attach interrupt
   attachInterrupt(digitalPinToInterrupt(inpin4), triggerISR4, HIGH); //attach interrupt
 
-
   noInterrupts();//stop interrupts
 
   //Timer5 16 bit
@@ -40,6 +39,7 @@ void setup()
 
 void loop()
 { 
+
 }
 
 void triggerISR1() {

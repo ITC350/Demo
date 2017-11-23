@@ -1,4 +1,4 @@
-//sensor 
+//sensor
 int inpin1 = 18; //interrupt pin, 3 is int.5
 int inpin2 = 19; //interrupt pin, 3 is int.4
 int inpin3 = 20; //interrupt pin, 3 is int.3
@@ -10,10 +10,10 @@ volatile int incount3  = 0; //value for number of interrpts in given time frame
 volatile int incount4  = 0; //value for number of interrpts in given time frame
 
 //motor kontrol #############################################################################################
-const int servo=5;
-const int dc_has=10;
-const int dc_ret1=11;
-const int dc_ret2=12;
+const int servo = 5;
+const int dc_has = 10;
+const int dc_ret1 = 11;
+const int dc_ret2 = 12;
 unsigned long tid;
 
 void setup()
@@ -42,7 +42,7 @@ void setup()
   TIMSK1 |= (1 << OCIE1A);  //enable timer compare interrupt
 
   interrupts();//allow interrupts
-  
+
   //motor #############################################################################################
   TCCR3B = TCCR3B & 0b11111000 | 0x04;
   pinMode(servo, OUTPUT);   // sets the pin as output
@@ -53,20 +53,7 @@ void setup()
 
 void loop()
 {
-  //frem
-  analogWrite(servo, 48);
-  analogWrite(dc_has, 35);
-  digitalWrite(dc_ret1,HIGH);
-  digitalWrite(dc_ret2,LOW);
-
-   for (int i=35; i <= 255; i++){
-      analogWrite(dc_has, i);
-      delay(50);
-   }
-   for (int i=255; i >= 35; i--){
-      analogWrite(dc_has, i);
-      delay(50);
-   }
+  
 }
 
 //sensor interrupts #############################################################################################
@@ -96,14 +83,14 @@ void triggerISR4() {
 
 //Timer interrrput
 ISR(TIMER1_COMPA_vect) { //timer1 interrupt
-    Serial.println(incount1);
-//  Serial.print(incount1);
-//  Serial.print(":");
-//  Serial.println(incount2);
-//  Serial.print(incount3);
-//  Serial.print(":");
-//  Serial.println(incount4);
-//  Serial.println("###########");
+  //  Serial.println(incount1);
+  Serial.print(incount1);
+  Serial.print(":");
+  Serial.println(incount2);
+  Serial.print(incount3);
+  Serial.print(":");
+  Serial.println(incount4);
+  Serial.println("###########");
   incount1 = 0;
   incount2 = 0;
   incount3 = 0;
