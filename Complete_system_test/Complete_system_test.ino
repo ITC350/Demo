@@ -1,8 +1,8 @@
 //sensor
 int inpin1 = 18; //interrupt pin, 3 is int.5
 int inpin2 = 19; //interrupt pin, 3 is int.4
-int inpin3 = 20; //interrupt pin, 3 is int.3
-int inpin4 = 21; //interrupt pin, 3 is int.2
+int inpin3 = 2; //interrupt pin, 3 is int.0
+int inpin4 = 3; //interrupt pin, 3 is int.1
 //volatile int state = HIGH; //pin 13 led react with interrupt
 volatile int incount1  = 0; //value for number of interrpts in given time frame
 volatile int incount2  = 0; //value for number of interrpts in given time frame
@@ -24,7 +24,6 @@ void setup()
   pinMode(inpin2, INPUT);
   pinMode(inpin3, INPUT);
   pinMode(inpin4, INPUT);
-  pinMode(13, OUTPUT);
   attachInterrupt(digitalPinToInterrupt(inpin1), triggerISR1, HIGH); //attach interrupt
   attachInterrupt(digitalPinToInterrupt(inpin2), triggerISR2, HIGH); //attach interrupt
   attachInterrupt(digitalPinToInterrupt(inpin3), triggerISR3, HIGH); //attach interrupt
