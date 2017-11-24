@@ -1,10 +1,10 @@
 //sensor
 int inpin1 = 18; //interrupt pin, 18 is int.5
 int inpin2 = 19; //interrupt pin, 19 is int.4
-int inpin3 = 20; //interrupt pin, 20 is int.3
-int inpin4 = 21; //interrupt pin, 21 is int.2
+int inpin3 = 2; //interrupt pin, 20 is int.3
+int inpin4 = 3; //interrupt pin, 21 is int.2
 
-volatile unsigned int in1_time = 0;
+volatile unsigned int in1_time = 0; 
 volatile unsigned int in2_time = 0;
 volatile unsigned int in3_time = 0;
 volatile unsigned int in4_time = 0;
