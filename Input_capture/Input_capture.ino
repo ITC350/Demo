@@ -1,8 +1,8 @@
 //sensor
 int inpin1 = 18; //interrupt pin, 18 is int.5
 int inpin2 = 19; //interrupt pin, 19 is int.4
-int inpin3 = 2; //interrupt pin, 20 is int.3
-int inpin4 = 3; //interrupt pin, 21 is int.2
+int inpin3 = 2; //interrupt pin, 20 is int.0
+int inpin4 = 3; //interrupt pin, 21 is int.1
 
 volatile unsigned int in1_time = 0; 
 volatile unsigned int in2_time = 0;
@@ -34,7 +34,6 @@ void setup()
   TCCR1B |= (0 << WGM52);   //Normal mode
 
   interrupts();//allow interrupts
-
 }
 
 void loop()
@@ -62,6 +61,4 @@ void triggerISR4() {
   Serial.println(TCNT5 - in4_time);
   in4_time = TCNT5;
 }
-
-
 
