@@ -22,10 +22,10 @@ void loop()
   digitalWrite(dc_ret1,HIGH);
   digitalWrite(dc_ret2,LOW);
   delay(1000);
-  //tilbage
-  analogWrite(servo, 64);
-  analogWrite(dc_has, 35);
-  digitalWrite(dc_ret1,LOW);
-  digitalWrite(dc_ret2,HIGH);
-  delay(1000);
+//  //tilbage
+//  analogWrite(servo, 64);
+//  analogWrite(dc_has, 35);
+//  digitalWrite(dc_ret1,LOW);
+//  digitalWrite(dc_ret2,HIGH);
+//  delay(1000);
 }
